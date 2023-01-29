@@ -66,12 +66,11 @@ users.
 
 After doing some research into how Federated Learning
 (FL) could be actually implemented I decided to use Amazon Web Services
-and Flower[^4] as an easy to use FL Framework (compare example code in
-Figure [\[code:pegasusx\]](#code:pegasusx){reference-type="ref"
-reference="code:pegasusx"}). However, this application could be
+and Flower[^4] as an easy to use FL Framework (compare example code below). However, this application could be
 implemented on any cloud platform, not just Amazon Web Services (AWS).
 
 Example code for the Tokenizer and Inference service from the PegasusX documentation: [https://huggingface.co/docs/transformers/model_doc/pegasus_x](https://huggingface.co/docs/transformers/model_doc/pegasus_x)
+
 ``` python
 from transformers import PegasusTokenizer, PegasusXForConditionalGeneration
 
@@ -85,6 +84,8 @@ ARTICLE_TO_SUMMARIZE = (
     "which were expected to last through at least midday tomorrow."
 )
 inputs = tokenizer(ARTICLE_TO_SUMMARIZE, max_length=1024, return_tensors="pt")
+
+
 
 # Generate Summary
 summary_ids = model.generate(inputs["input_ids"])
@@ -106,11 +107,10 @@ However, for this project I decided to use only services from AWS.
 ## AWS
 
 ![Cloud architecture for a federated learning approach to adaptable chat
-summarization.](https://github.com/chrisonntag/adaptable-chat-summarization/raw/main/diagrams/CloudPatterns-AWS-single.png){#fig:cloud-aws-single}
+summarization.](https://github.com/chrisonntag/adaptable-chat-summarization/raw/main/diagrams/CloudPatterns-AWS.png)
 
 The application is built using Amazon Web Services
-(Figure [5](#fig:cloud-aws-single){reference-type="ref"
-reference="fig:cloud-aws-single"}), with a Virtual Private Network
+(Figure [^5]), with a Virtual Private Network
 connecting a user device (with the chat app on it) to the various
 components of the system. The user requests a summary via an AWS API
 Gateway, which is provided by a SageMaker instance that accesses a
@@ -154,11 +154,6 @@ Azure, and Google Cloud Platform, we can quickly and easily deploy and
 run our applications and services without the need to manage and
 maintain own infrastructure.
 
-## Annotated AWS Cloud Architecture
-
-![AWS specific architecture of a federated learning approach to chat
-summarization with further
-annotations.](https://github.com/chrisonntag/adaptable-chat-summarization/raw/main/diagrams/CloudPatterns-AWS.png){#fig:aws-cloud-annotated}
 
 ## References
 
@@ -169,3 +164,7 @@ annotations.](https://github.com/chrisonntag/adaptable-chat-summarization/raw/ma
 [^3]: https://github.com/google-research/pegasus
 
 [^4]: <https://flower.dev>
+
+[^5]: ![AWS specific architecture of a federated learning approach to chat
+summarization with further
+annotations.](https://github.com/chrisonntag/adaptable-chat-summarization/raw/main/diagrams/CloudPatterns-AWS-single.png)
