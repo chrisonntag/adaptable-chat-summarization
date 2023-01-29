@@ -106,7 +106,7 @@ However, for this project I decided to use only services from AWS.
 ## AWS
 
 ![Cloud architecture for a federated learning approach to adaptable chat
-summarization.](images/CloudPatterns-AWS-single.png){#fig:cloud-aws-single}
+summarization.](https://github.com/chrisonntag/adaptable-chat-summarization/raw/main/diagrams/CloudPatterns-AWS-single.png){#fig:cloud-aws-single}
 
 The application is built using Amazon Web Services
 (Figure [5](#fig:cloud-aws-single){reference-type="ref"
@@ -154,11 +154,13 @@ Azure, and Google Cloud Platform, we can quickly and easily deploy and
 run our applications and services without the need to manage and
 maintain own infrastructure.
 
-# Annotated AWS Cloud Architecture
+## Annotated AWS Cloud Architecture
 
 ![AWS specific architecture of a federated learning approach to chat
 summarization with further
-annotations.](images/CloudPatterns-AWS.png){#fig:aws-cloud-annotated}
+annotations.](https://github.com/chrisonntag/adaptable-chat-summarization/raw/main/diagrams/CloudPatterns-AWS.png){#fig:aws-cloud-annotated}
+
+## References
 
 [^1]: https://www.mckinsey.com/industries/technology-media-and-telecommunications/our-insights/the-social-economy
 
